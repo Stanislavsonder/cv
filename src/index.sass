@@ -1,0 +1,365 @@
+@import reset.css
+@import fonts.sass
+
+
+
+body
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  background-color: #1d1b1a
+  background-image: repeating-linear-gradient(-45deg, transparent 1px 10px, rgba(0, 0, 0, 0.2) 10px 13px)
+  color: #ffffff
+  width: 95%
+  margin: auto
+  font-size: 18pt
+
+
+main 
+  display: flex
+  flex-wrap: wrap
+
+
+main > div 
+  display: flex
+  flex-direction: column
+  width: 50%
+
+header 
+  margin-top: 100px
+  display: flex
+  flex-direction: column
+  justify-content: flex-end
+  align-items: center
+
+
+
+
+.header__photo
+  margin-bottom: -100px
+  width: 250px
+  height: 250px
+  background: #ffffff
+  z-index: 10
+  border-radius: 25px
+  padding: 10px
+  box-sizing: border-box
+  align-self: flex-start
+  margin-left: 150px
+  box-shadow: #211d1c 1px 1px 25px
+  transform: rotate(-45deg)
+  img
+    border-radius: 20px
+
+
+
+
+.squares
+  height: 525px
+  width: 100%
+  align-self: flex-start
+
+.squares_blue
+  position: absolute
+  border-radius: 25px
+  margin-left: 50px
+  width: 450px
+  height: 525px
+  background: #5563a3
+
+.squares_white
+  position: absolute
+  width: 525px
+  height: 450px
+  margin: 34px 0 0 15px
+  border-radius: 25px
+  background: #ffffff
+  color: #000000
+  text-align: center
+  padding-top: 150px
+  box-sizing: border-box
+
+  h1
+    font-size: 1.5em
+    font-family: 'Pacifico', 'Roboto', semi-serif, serif
+    color: #5563a3
+
+  h2
+    text-transform: uppercase
+    padding-top: 15px
+    font-weight: bold
+
+  p
+    padding: 50px 20px 0 20px
+
+
+
+
+
+// Contacts
+.contacts
+  ul
+    margin-top: 100px
+
+  ul li
+    display: grid
+    grid-template-columns: 100px 1fr
+    grid-template-rows: 30px 1fr
+    grid-template-areas: "icon title""none link"
+    margin: 30px 0
+
+  ul li h5
+    grid-area: title
+    color: #5563a3
+    font-weight: bold
+
+  ul li > p, ul li > div
+    grid-area: link
+    font-weight: bold
+
+  ul li p a
+    color: #ffffff
+    text-decoration: none
+
+  ul li img
+    grid-area: icon
+    display: inline-block
+    width: 30px
+    height: 30px
+    margin-left: 35px
+
+
+
+
+
+
+
+// Experience and Education
+.experience-education
+  background: linear-gradient(90deg, transparent 20%, #5563a3 20%)
+  z-index: -1
+
+  >section
+    padding-top: 50px
+  h2
+    padding: 50px 0 15px 0
+    margin: 0 0 25px 0
+    font-size: 1.2em
+    font-weight: bold
+    text-transform: uppercase
+    width: 80%
+    border-bottom: 2px solid #ffffff
+  section > section
+    display: flex
+
+
+.experience-education-date
+  width: 20%
+  font-weight: bold
+
+.experience-education-date p
+  padding: 3px 0
+
+
+.experience-education-dots span
+  background: url("./images/Dot.svg")
+  display: inline-block
+  width: 15px
+  height: 15px
+  margin-left: 5px
+
+
+.main-right::after
+  display: block
+  content: ''
+  height: 25px
+  background: #5563a3
+  width: 80%
+  margin-left: 20%
+  border-bottom-left-radius: 25px
+
+
+.experience-education-info::before
+  position: absolute
+  content: ""
+  background: url("./images/Dot.svg") no-repeat 0 100%
+  display: block
+  width: 15px
+  height: 15px
+  margin-left: -49px
+
+
+.experience-education-info
+  background: #5563a3
+  width: 79%
+  box-sizing: border-box
+  padding: 0 10px 50px 40px
+  border-left: 1px solid #ffffff
+  h4
+    font-size: 1.2em
+    font-weight: bold
+    text-transform: uppercase
+  h5
+    font-weight: bold
+    padding: 2px 0 20px 0
+
+
+
+
+.my-skills h2
+  margin: 40px 0 10px 0
+  font-size: 1.2em
+  font-weight: bold
+  text-transform: uppercase
+
+
+.my-skills-list
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-around
+  li
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    width: 150px
+    height: 150px
+    box-sizing: border-box
+    text-align: center
+  li div:not(.skill-dotes)
+    border: 5px solid #5563a3
+    border-radius: 50%
+    width: 100px
+    height: 100px
+    padding: 15px 5px 5px 5px
+    box-sizing: border-box
+    margin-bottom: 5px
+  li div img
+    width: 64px
+    height: 64px
+
+.skill-dotes
+  width: 100%
+
+.skill-dotes span
+  display: inline-block
+  width: 10px
+  height: 10px
+  border-radius: 100%
+  border: 2px solid #5563a3
+  background: #5563a3
+  margin: 0 3px
+
+.skill-dotes .empty-dot
+  background: none
+
+
+.tech-stack
+  padding: 25px 35px
+  p
+    color: #a6a6a6
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-around
+  p span
+    margin: 10px
+
+
+.skills-code
+  display: flex
+  >div
+    width: 50%
+
+.tech-stack h2
+  margin: 40px 0 10px 0
+  font-size: 1.2em
+  font-weight: bold
+  text-transform: uppercase
+
+
+footer
+  display: flex
+  padding-left: 35px
+  height: 200px
+
+footer > div
+  width: 100%
+  display: flex
+  align-items: flex-end
+  text-align: center
+  justify-content: center
+
+.copy
+  padding: 20px 50px
+  font-family: 'Pacifico', 'Roboto', semi-serif, serif
+
+
+
+
+@media (max-width: 1200px)
+  body 
+    width: 100%
+
+  main > div 
+    width: 100%
+
+  .header__photo
+    margin: auto auto -110px
+
+  .squares > .squares_blue
+    width: 85%
+    margin: 0 7.5%
+    border-radius: 25px
+
+  .squares > .squares_white
+    width: 90%
+    border-radius: 25px
+    margin: 34px 5% 0 5%
+
+  .contacts ul 
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    padding: 0 5%
+    li
+      flex-grow: 1
+      flex-shrink: 2
+
+  .main-right 
+    padding: 0 5%
+
+  .main-right::before 
+    display: block
+    content: ''
+    height: 25px
+    background: #5563a3
+    width: 80%
+    margin-left: 20%
+    border-radius: 25px 25px 0 0
+
+  .main-right::after 
+    display: block
+    content: ''
+    height: 25px
+    background: #5563a3
+    width: 80%
+    margin-left: 20%
+    border-radius: 0 0 25px 25px
+
+  .skills-code 
+    flex-wrap: wrap
+    padding: 0 5%
+
+  .skills-code > div 
+    width: 100%
+
+  .tech-stack 
+    padding: 0
+
+  footer 
+    margin: 0 5%
+    font-size: 0.7em
+
+  footer div .squares_white
+    border-radius: 25px 25px 0 0
+

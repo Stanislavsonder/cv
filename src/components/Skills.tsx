@@ -71,8 +71,6 @@ const Skills:FC = () => {
                         if (index >= skill.stars) return (<span className="empty-dot" key={skill.skill + '-dot-' + i + '-'+ index}></span>)
                         return (<span key={skill.skill + '-dot-' + i + '-'+ index}></span>)
                     })
-                    console.log(stars)
-
                     return (
                     <li key={skill.skill + '-skill'}>
                         <div><img src={skill.imageSrc} alt={skill.skill + ' logo'} title={skill.imageTitle} width="64"

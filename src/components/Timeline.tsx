@@ -4,7 +4,7 @@ import Education from "./Education";
 
 export type ExperienceType = {
     startDate: number
-    endDate: number
+    endDate: number | string
     position: string
     company: string
     description: string
@@ -30,10 +30,24 @@ const Timeline:FC = () => {
         },
         {
             startDate: 2019,
-            endDate: 2021,
+            endDate: 2019,
             position: 'JAVASCRIPT/EXTENDSCRIPT DEVELOPER',
             company: 'EComerce Group, PBN France',
             description: 'Creating of Adobe Illustrator, Photoshop scripts, graphic design, product automation.'
+        },
+        {
+            startDate: 2019,
+            endDate: 2020,
+            position: 'Front-end/Full-Stack Developer',
+            company: '(Course Project)',
+            description: 'Developing of Full-stack web-application for gaming events, based on Streamhata and SGG events.'
+        },
+        {
+            startDate: 2020,
+            endDate: 'Present time',
+            position: 'AEM Front-end Developer',
+            company: 'Axamit',
+            description: 'AEM components and templates development for large online catalog. React/Vue.js front-end developing.'
         },
     ]
     const education: ExperienceType[] = [

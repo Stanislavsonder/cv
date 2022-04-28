@@ -5,7 +5,7 @@ import Timeline from "./components/Timeline";
 import Skills from "./components/Skills";
 
 function App() {
-  const techs = ['JavaScript', 'TypeScript', 'ReactJS', 'NodeJS', 'HTML5', 'CSS3', 'SASS', 'SCSS', 'ExtendScript', 'MERN', 'Webpack', 'Express', 'MongoDB', 'Mongoose', 'SQL', 'Git']
+  const techs = ['JavaScript', 'TypeScript', 'ReactJS', 'Vue', 'MobX', 'Vuex', 'Nuxt', 'Next.JS', 'NodeJS', 'HTML5', 'CSS3', 'SASS', 'SCSS', 'ExtendScript', 'AEM', 'MERN', 'Material UI', 'Webpack', 'Express', 'MongoDB', 'Mongoose', 'SQL', 'Jira / Confluence / Slack', 'Git']
 
   return (
     <div className="App">
@@ -20,8 +20,8 @@ function App() {
               <div className="squares_white">
                 <h1>Stanislav Doronin</h1>
                 <h2>JavaScript software engineer</h2>
-                <p>Front-end, Back-end, Scripting JavaScript/TypeScript developer, with 2 years commercial experience of
-                  ExtendScript production and some React experience.</p>
+                <p>Front-end, Back-end, Scripting JavaScript/TypeScript developer, with 4 years commercial experience of
+                  ExtendScript / AEM / React / Vue developing.</p>
               </div>
             </div>
           </header>
@@ -38,7 +38,7 @@ function App() {
                 <div>
                   <p>Russian native </p>
                   <p>Belarusian native </p>
-                  <p>English B1-B2 </p>
+                  <p>English С1 Professional </p>
                 </div>
               </li>
               <li>

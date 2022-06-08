@@ -32,7 +32,7 @@ const Timeline:FC = () => {
             startDate: 2019,
             endDate: 2019,
             position: 'JAVASCRIPT/EXTENDSCRIPT DEVELOPER',
-            company: 'EComerce Group, PBN France',
+            company: 'Flexmerch Corp',
             description: 'Creating of Adobe Illustrator, Photoshop scripts, graphic design, product automation.'
         },
         {

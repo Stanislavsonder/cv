@@ -1,0 +1,4 @@
+# 4 space indentation
+[*.{jsx,tsx,js,ts,scss,css,json}]
+indent_style = tab
+tab_width = 4

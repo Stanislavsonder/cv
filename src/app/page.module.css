@@ -19,6 +19,16 @@
 	}
 }
 
+.tools {
+	display: flex;
+	justify-content: space-between;
+	height: 1.5rem;
+
+	@media print {
+		display: none;
+	}
+}
+
 .contacts {
 	display: flex;
 	flex-wrap: wrap;

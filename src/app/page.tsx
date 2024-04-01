@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { ADDRESS, CONTACTS, EDUCATION, EXPERIENCE, NAME, PROJECTS, TECH_CLOUD } from '@/app/data'
 import styles from './page.module.css'
 import { Contact, Education, Experience, Project } from '@/types'
+import ThemeSwitcher from '@/components/ThemeSwitcher'
 
 function contactToHTML(contact: Contact) {
 	return (
@@ -98,7 +99,8 @@ function stringToHTML(string: string) {
 export default async function Home() {
 	return (
 		<main className={styles.main}>
-			<div className={[styles.hideOnPrint, styles.textRight].join(' ')}>
+			<div className={[styles.hideOnPrint, styles.textRight, styles.tools].join(' ')}>
+				<ThemeSwitcher />
 				<a
 					href="/Stanislav_Doronin_CV.pdf"
 					download

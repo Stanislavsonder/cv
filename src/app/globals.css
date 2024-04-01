@@ -28,6 +28,22 @@ body {
 	}
 }
 
+body.dark {
+	@media not print {
+		color: #f5f5f5;
+		background: #0a0a0a;
+
+		button {
+			color: #f5f5f5;
+		}
+
+		img {
+			-webkit-filter: invert(100%);
+			filter: invert(100%);
+		}
+	}
+}
+
 :root {
 	font-size: 16px;
 

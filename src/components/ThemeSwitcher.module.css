@@ -1,0 +1,15 @@
+.button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.5rem;
+	background: none;
+	border: none;
+	cursor: pointer;
+	height: 1.5rem;
+}
+
+.icon {
+	width: 1.5rem;
+    height: 1.5rem;
+}

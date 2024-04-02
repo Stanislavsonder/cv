@@ -5,6 +5,6 @@ services:
       context: ./
     command: npm run start
     ports:
-      - "3010:3000"
+      - "3020:3020"
     environment:
       NODE_ENV: production

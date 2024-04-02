@@ -3,9 +3,6 @@ services:
   cv:
     build:
       context: ./
-      target: runner
-    volumes:
-      - .:/app
     command: npm run start
     ports:
       - "3010:3000"

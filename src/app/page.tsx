@@ -1,8 +1,8 @@
 import Image from 'next/image'
-import { ADDRESS, CONTACTS, EDUCATION, EXPERIENCE, NAME, PROJECTS, TECH_CLOUD } from '@/app/data'
+import { ADDRESS, CONTACTS, EDUCATION, EXPERIENCE, NAME, PROJECTS, TECH_CLOUD } from './data'
 import styles from './page.module.css'
 import { Contact, Education, Experience, Project } from '@/types'
-import ThemeSwitcher from '@/components/ThemeSwitcher'
+import ThemeSwitcher from '../components/ThemeSwitcher'
 
 function contactToHTML(contact: Contact) {
 	return (

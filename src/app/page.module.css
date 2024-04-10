@@ -3,22 +3,6 @@
 	margin: auto;
 }
 
-.hideOnPrint {
-	@media print {
-		display: none;
-	}
-}
-
-.textCenter {
-	text-align: center;
-}
-
-.textRight {
-	@media only screen and (min-width: 768px), print {
-		text-align: right;
-	}
-}
-
 .tools {
 	display: flex;
 	justify-content: space-between;

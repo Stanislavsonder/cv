@@ -2,22 +2,34 @@ export type Education = {
 	name: string
 	location: string
 	degree: string
-	startDate: string
-	endDate: string
+	startDate: Date
+	endDate?: Date
 }
 
 export type Experience = {
 	company: string
 	position: string
 	location: string
-	startDate: string
-	endDate: string
-	achievementList: string[]
+	startDate: Date
+	endDate?: Date
+	achievementList: Achievement[]
+	projects?: WorkProject[]
+}
+
+export type Achievement = {
+	text: string
+	projects?: WorkProject[]
+}
+
+export type WorkProject = {
+	name: string
+	link?: string
 }
 
 export type Project = {
 	name: string
-	date: string
+	startDate: Date
+	endDate?: Date
 	link?: string
 	technologies: string[]
 	achievementList: string[]
@@ -28,4 +40,11 @@ export type Contact = {
 	text: string
 	icon: string
 	link: string
+}
+
+export type Skill = {
+	name: string
+	url?: string,
+	category: string
+	important: boolean
 }

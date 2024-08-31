@@ -15,12 +15,18 @@ h4, h5, h6 {
 	font-size: 1rem;
 }
 
+h5 {
+	font-weight: 500;
+}
+
 a {
 	color: unset;
 }
 
 
 body {
+	--grey: rgb(100, 100, 100);
+
 	padding: 1rem;
 
 	@media only screen and (min-width: 768px) {
@@ -29,6 +35,8 @@ body {
 }
 
 body.dark {
+	--grey: rgb(175, 175, 175);
+
 	@media not print {
 		color: #f5f5f5;
 		background: #0a0a0a;

@@ -1,8 +1,27 @@
 import Image from 'next/image'
-import { ADDRESS, CONTACTS, EDUCATION, EXPERIENCE, NAME, PROJECTS, TECH_CLOUD } from './data'
+import { ADDRESS, CONTACTS, DESCRIPTION, EDUCATION, EXPERIENCE, NAME, PROJECTS, TECH_CLOUD } from './data'
 import styles from './page.module.css'
-import { Contact, Education, Experience, Project } from '@/types'
+import { Contact, Education, Experience, Project, Skill } from '@/types'
 import ThemeSwitcher from '../components/ThemeSwitcher'
+
+function getDatesRange(startDate: Date, endDate?: Date) {
+	if (endDate?.getFullYear() === startDate.getFullYear()) {
+		return `${startDate.getFullYear()}`
+	}
+	return `${startDate.getFullYear()} - ${endDate?.getFullYear() || 'Present'}`
+}
+
+function getExperienceDuration(startDate: Date, endDate?: Date) {
+	const diff = (endDate?.getTime() || Date.now()) - startDate.getTime()
+	const year = 1000 * 60 * 60 * 24 * 365
+	const month = 1000 * 60 * 60 * 24 * 30
+	const years = Math.floor(diff / year)
+	const months = Math.floor((diff % year) / month)
+	if (years < 1) {
+		return  '< 1 year'
+	}
+	return [years? `${years} year(s)` : '', months? `${months} months` : ''].filter(Boolean).join(', ')
+}
 
 function contactToHTML(contact: Contact) {
 	return (
@@ -30,11 +49,11 @@ function educationToHTML(education: Education) {
 			className={styles.education}
 		>
 			<h3>{education.name}</h3>
-			<h4 className={styles.textRight}>
-				{education.startDate} - {education.endDate}
+			<h4 className="textRight">
+				{getDatesRange(education.startDate, education.endDate)}
 			</h4>
 			<p>{education.degree}</p>
-			<address className={styles.textRight}>{education.location}</address>
+			<address className="textRight">{education.location}</address>
 		</li>
 	)
 }
@@ -46,16 +65,31 @@ function experienceToHTML(exp: Experience) {
 			className={styles.experience}
 		>
 			<div className={styles.experience__header}>
-				<h3>{exp.company}</h3>
-				<h4 className={styles.textRight}>
-					{exp.startDate} - {exp.endDate}
+				<h3 className={styles.experience__title}>{exp.company}</h3>
+				<h4 className={'textRight ' + styles.experience__dates}>
+					{getDatesRange(exp.startDate, exp.endDate)}
+					<span>{getExperienceDuration(exp.startDate, exp.endDate)}</span>
 				</h4>
 				<p>{exp.position}</p>
-				<address className={styles.textRight}>{exp.location}</address>
+				<address className="textRight">{exp.location}</address>
 			</div>
+			Projects: {' '}
+			<span className={styles.experience__projects}>
+				{exp.projects?.map(e => (
+					<a
+						className={styles.experience__project}
+						key={e.name}
+						href={e.link}
+					>
+						{e.name}
+					</a>
+				))}
+			</span>
 			<ul className={styles.experience__achievements}>
 				{exp.achievementList.map(achievement => (
-					<li key={achievement}>{achievement}</li>
+					<li key={achievement.text}>
+						{achievement.text}
+					</li>
 				))}
 			</ul>
 		</li>
@@ -70,7 +104,9 @@ function projectToHTML(proj: Project) {
 		>
 			<div className={styles.project__header}>
 				<h3>{proj.name}</h3>
-				<h5 className={styles.textRight}>{proj.date}</h5>
+				<h5 className="textRight">
+					{getDatesRange(proj.startDate, proj.endDate)}
+				</h5>
 			</div>
 			<p className={styles.project__technologies}>{proj.technologies.join(', ')}</p>
 			<p>
@@ -85,13 +121,15 @@ function projectToHTML(proj: Project) {
 	)
 }
 
-function stringToHTML(string: string) {
+function skillToHTML(skill: Skill) {
+	const className = [styles.techCloud__item, skill.important && styles['techCloud__item--important']].join(' ')
 	return (
 		<li
-			key={string}
-			className={styles.techCloud__item}
+			key={skill.name}
+			className={className}
 		>
-			{string}
+			{ skill.url && <a href={skill.url}>{skill.name}</a> }
+			{ !skill.url && skill.name }
 		</li>
 	)
 }
@@ -109,16 +147,12 @@ export default async function Home() {
 				</a>
 			</div>
 			<section>
-				<h1 className={styles.textCenter}>{NAME}</h1>
+				<h1 className="textCenter">{NAME}</h1>
 				<address>
-					<p className={styles.textCenter}>{ADDRESS}</p>
-					<ul className={styles.contacts}>{CONTACTS.map(contactToHTML)}</ul>
+					<p className="textCenter">{ADDRESS}</p>
 				</address>
-			</section>
-			<section>
-				<h2>Education</h2>
-				<hr />
-				<ul>{EDUCATION.map(educationToHTML)}</ul>
+				<p className={['textCenter', styles.description].join(' ')}>{DESCRIPTION}</p>
+				<ul className={styles.contacts}>{CONTACTS.map(contactToHTML)}</ul>
 			</section>
 			<section>
 				<h2>Experience</h2>
@@ -126,15 +160,24 @@ export default async function Home() {
 				<ul>{EXPERIENCE.map(experienceToHTML)}</ul>
 			</section>
 			<section>
+				<h2>Education</h2>
+				<hr />
+				<ul>{EDUCATION.map(educationToHTML)}</ul>
+			</section>
+			<section>
 				<h2>Non-commercial projects</h2>
 				<hr />
 				<ul>{PROJECTS.map(projectToHTML)}</ul>
 			</section>
 			<section>
-				<h2>Technical Skills (Cloud)</h2>
+				<h2>Technical Skills</h2>
 				<hr />
-				<ul className={[styles['techCloud'], styles['techCloud--list']].join(' ')}>{TECH_CLOUD.map(stringToHTML)}</ul>
-				<p className={styles.techCloud}>{TECH_CLOUD.join(', ')}</p>
+				<ul className={[styles['techCloud'], styles['techCloud--list']].join(' ')}>
+					{
+						TECH_CLOUD.map(skillToHTML)
+					}
+				</ul>
+				{/*<p className={styles.techCloud}>{TECH_CLOUD.join(', ')}</p>*/}
 			</section>
 		</main>
 	)

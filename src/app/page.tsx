@@ -18,9 +18,9 @@ function getExperienceDuration(startDate: Date, endDate?: Date) {
 	const years = Math.floor(diff / year)
 	const months = Math.floor((diff % year) / month)
 	if (years < 1) {
-		return  '< 1 year'
+		return '< 1 year'
 	}
-	return [years? `${years} year(s)` : '', months? `${months} months` : ''].filter(Boolean).join(', ')
+	return [years ? `${years} year(s)` : '', months ? `${months} months` : ''].filter(Boolean).join(', ')
 }
 
 function contactToHTML(contact: Contact) {
@@ -29,6 +29,8 @@ function contactToHTML(contact: Contact) {
 			<a
 				href={contact.link}
 				className={styles.contacts__item}
+				target="_blank"
+				rel="nofollow"
 			>
 				<Image
 					className={styles.contacts__icon}
@@ -49,9 +51,7 @@ function educationToHTML(education: Education) {
 			className={styles.education}
 		>
 			<h3>{education.name}</h3>
-			<h4 className="textRight">
-				{getDatesRange(education.startDate, education.endDate)}
-			</h4>
+			<h4 className="textRight">{getDatesRange(education.startDate, education.endDate)}</h4>
 			<p>{education.degree}</p>
 			<address className="textRight">{education.location}</address>
 		</li>
@@ -73,13 +73,15 @@ function experienceToHTML(exp: Experience) {
 				<p>{exp.position}</p>
 				<address className="textRight">{exp.location}</address>
 			</div>
-			Projects: {' '}
+			Projects:{' '}
 			<span className={styles.experience__projects}>
 				{exp.projects?.map(e => (
 					<a
 						className={styles.experience__project}
 						key={e.name}
 						href={e.link}
+						target="_blank"
+						rel="nofollow"
 					>
 						{e.name}
 					</a>
@@ -87,9 +89,7 @@ function experienceToHTML(exp: Experience) {
 			</span>
 			<ul className={styles.experience__achievements}>
 				{exp.achievementList.map(achievement => (
-					<li key={achievement.text}>
-						{achievement.text}
-					</li>
+					<li key={achievement.text}>{achievement.text}</li>
 				))}
 			</ul>
 		</li>
@@ -104,13 +104,17 @@ function projectToHTML(proj: Project) {
 		>
 			<div className={styles.project__header}>
 				<h3>{proj.name}</h3>
-				<h5 className="textRight">
-					{getDatesRange(proj.startDate, proj.endDate)}
-				</h5>
+				<h5 className="textRight">{getDatesRange(proj.startDate, proj.endDate)}</h5>
 			</div>
 			<p className={styles.project__technologies}>{proj.technologies.join(', ')}</p>
 			<p>
-				<a href={proj.link}>{proj.link}</a>
+				<a
+					href={proj.link}
+					target="_blank"
+					rel="nofollow"
+				>
+					{proj.link}
+				</a>
 			</p>
 			<ul className={styles.project__achievements}>
 				{proj.achievementList.map(achievement => (
@@ -128,8 +132,16 @@ function skillToHTML(skill: Skill) {
 			key={skill.name}
 			className={className}
 		>
-			{ skill.url && <a href={skill.url}>{skill.name}</a> }
-			{ !skill.url && skill.name }
+			{skill.url && (
+				<a
+					href={skill.url}
+					target="_blank"
+					rel="nofollow"
+				>
+					{skill.name}
+				</a>
+			)}
+			{!skill.url && skill.name}
 		</li>
 	)
 }
@@ -172,11 +184,7 @@ export default async function Home() {
 			<section>
 				<h2>Technical Skills</h2>
 				<hr />
-				<ul className={[styles['techCloud'], styles['techCloud--list']].join(' ')}>
-					{
-						TECH_CLOUD.map(skillToHTML)
-					}
-				</ul>
+				<ul className={[styles['techCloud'], styles['techCloud--list']].join(' ')}>{TECH_CLOUD.map(skillToHTML)}</ul>
 				{/*<p className={styles.techCloud}>{TECH_CLOUD.join(', ')}</p>*/}
 			</section>
 		</main>

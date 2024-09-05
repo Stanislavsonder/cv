@@ -85,6 +85,8 @@
 }
 
 .experience__projects {
+	display: flex;
+	flex-wrap: wrap;
 	color: var(--grey);
 	font-size: 12px;
 }

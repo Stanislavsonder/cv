@@ -3,6 +3,7 @@ import { ADDRESS, CONTACTS, DESCRIPTION, EDUCATION, EXPERIENCE, NAME, PROJECTS, 
 import styles from './page.module.css'
 import { Contact, Education, Experience, Project, Skill } from '@/types'
 import ThemeSwitcher from '../components/ThemeSwitcher'
+import DownloadPdfButton from '@/components/DownloadPdf'
 
 function getDatesRange(startDate: Date, endDate?: Date) {
 	if (endDate?.getFullYear() === startDate.getFullYear()) {
@@ -148,15 +149,13 @@ function skillToHTML(skill: Skill) {
 
 export default async function Home() {
 	return (
-		<main className={styles.main}>
+		<main
+			className={styles.main}
+			id="cv"
+		>
 			<div className={[styles.hideOnPrint, styles.textRight, styles.tools].join(' ')}>
 				<ThemeSwitcher />
-				<a
-					href="/Stanislav_Doronin_CV.pdf"
-					download
-				>
-					Download PDF
-				</a>
+				<DownloadPdfButton />
 			</div>
 			<section>
 				<h1 className="textCenter">{NAME}</h1>

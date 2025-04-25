@@ -43,7 +43,6 @@ COPY --from=build /app ./
 ENV NODE_ENV=production
 ENV PORT=3020
 
-ENV PUPPETEER_EXECUTABLE_PATH=/app/node_modules/puppeteer/.local-chromium/linux-*/chrome-linux/chrome
 
 EXPOSE 3020
 

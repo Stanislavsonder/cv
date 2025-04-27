@@ -12,3 +12,35 @@
 .linkButton:hover {
 	opacity: 0.8;
 }
+
+.linkButton:disabled {
+	cursor: not-allowed;
+	opacity: 0.6;
+}
+
+.loader {
+	display: inline-block;
+	position: relative;
+	width: 1em;
+	height: 1em;
+}
+
+.loader::after {
+	content: '';
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	border-radius: 50%;
+	border: 2px solid currentColor;
+	border-color: currentColor transparent currentColor transparent;
+	animation: spin 1.2s linear infinite;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}

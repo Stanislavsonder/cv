@@ -4,7 +4,8 @@ import puppeteer from 'puppeteer'
 export async function GET() {
 	const browser = await puppeteer.launch({
 		headless: true,
-		args: ['--no-sandbox', '--disable-setuid-sandbox']
+		executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
+		args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-gpu']
 	})
 
 	const page = await browser.newPage()
@@ -30,12 +31,15 @@ export async function GET() {
 
 	await browser.close()
 
+	// Use a consistent date format between server and client
 	const cvDownloadDate = new Date()
-	const filename = `Stanislav_Doronin_CV(${cvDownloadDate.toLocaleDateString('en-US', {
-		year: 'numeric',
-		month: 'long',
-		day: 'numeric'
-	})}).pdf`
+	const filename = `Stanislav_Doronin_CV_${cvDownloadDate
+		.toLocaleDateString('en-US', {
+			year: 'numeric',
+			month: '2-digit',
+			day: '2-digit'
+		})
+		.replace(/\//g, '-')}.pdf`
 
 	return new NextResponse(pdf, {
 		status: 200,

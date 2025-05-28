@@ -37,8 +37,44 @@
 
 .contacts__icon {
 	width: 1rem;
-    height: 1rem;
+	height: 1rem;
 	margin-top: 0.15rem;
+}
+
+.languages__list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem 2rem;
+	list-style: none;
+	padding: 0;
+	margin-bottom: 2rem;
+}
+
+.language {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 0.25rem;
+}
+
+.language__name {
+	font-weight: bold;
+}
+
+.language__level {
+	font-size: 0.9rem;
+	color: var(--grey);
+	font-style: italic;
+
+	&:before {
+		content: '(';
+		margin-right: 0.25rem;
+	}
+
+	&:after {
+		content: ')';
+		margin-left: 0.25rem;
+	}
 }
 
 .education {
@@ -81,7 +117,7 @@
 
 	@media only screen and (min-width: 768px), print {
 		padding: 0 3rem 1rem;
-    }
+	}
 }
 
 .experience__projects {
@@ -103,10 +139,9 @@
 	text-decoration: none;
 }
 
-
 .project {
 	margin-bottom: 0.5rem;
-    list-style: none;
+	list-style: none;
 }
 
 .project__header {
@@ -136,7 +171,7 @@
 
 	@media only screen and (min-width: 768px), print {
 		padding: 0 3rem 0.5rem;
-    }
+	}
 }
 
 .techCloud {
@@ -145,8 +180,8 @@
 	text-align: justify;
 
 	@media only screen and (min-width: 768px), print {
-		padding: 0
-    }
+		padding: 0;
+	}
 
 	@media not print {
 		display: none;

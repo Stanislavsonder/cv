@@ -3,7 +3,7 @@ import envelopeIcon from '../assets/envelope.svg'
 import linkedinIcon from '../assets/linkedin.svg'
 import telegramIcon from '../assets/telegram.svg'
 import githubIcon from '../assets/github.svg'
-import type { Contact, Education, Experience, Project, Skill, WorkProject } from '@/types'
+import type { Contact, Education, Experience, Project, Skill, WorkProject, Language } from '@/types'
 
 type ProjectNames = 'ST' | 'iHeart' | 'CTVNews' | 'Noovoinfo' | 'BNN' | 'TSN' | 'RDS' | 'CP24' | 'ShoppingTrends' | 'FlexmerchPBN' | 'Noovo' | 'CTV' | 'Crave'
 const WORK_PROJECTS: Record<ProjectNames, WorkProject> = {
@@ -64,7 +64,7 @@ const WORK_PROJECTS: Record<ProjectNames, WorkProject> = {
 const NAME = 'Stanislav Doronin'
 const ADDRESS = 'Montreal, Quebec, Canada'
 const DESCRIPTION =
-	'Senior Frontend Engineer with a proven track record of designing scalable architectures, leading cross-functional teams, and delivering high-performance user experiences across high-traffic platforms'
+	'Senior Frontend Engineer with a proven track record of designing scalable architectures, leading cross-functional teams, and delivering high-performance user experiences across high-traffic platforms. Actively seeking full-time opportunities globally, open to relocation (Canada/EU) and remote roles.'
 
 const CONTACTS: Contact[] = [
 	{
@@ -99,6 +99,25 @@ const CONTACTS: Contact[] = [
 	}
 ]
 
+const LANGUAGES = [
+	{
+		name: 'Russian',
+		level: 'Native'
+	},
+	{
+		name: 'Belarusian',
+		level: 'Native'
+	},
+	{
+		name: 'English',
+		level: 'Fluent'
+	},
+	{
+		name: 'French',
+		level: 'Beginner'
+	}
+]
+
 const EDUCATION: Education[] = [
 	{
 		name: 'Belarusian State University',
@@ -108,25 +127,17 @@ const EDUCATION: Education[] = [
 		endDate: new Date(2022, 6)
 	},
 	{
-		name: 'Advanced Frontend UlbiTV',
-		location: 'Montreal, Canada',
+		name: 'Online Advanced Frontend Course by UlbiTV',
 		degree: 'Covered complex frontend architecture, accessible UI development, performance optimization, testing strategies (unit, e2e), CI/CD pipelines, and full-stack integration best practices',
 		startDate: new Date(2022, 9),
 		endDate: new Date(2022, 11)
 	},
 	{
-		name: "Timur Shemsedinov's NodeJS architecture mentoring",
+		name: 'Personal mentorship in Node.js architecture under industry expert Timur Shemsedinov',
 		location: 'Montreal, Canada',
 		degree: 'Asynchronous-, parallel- contract-, multi-paradigm- and meta- programming, and design patterns (OOP, GRASP, SOLID, GoF).',
 		startDate: new Date(2023, 1),
 		endDate: new Date(2023, 5)
-	},
-	{
-		name: 'AI and Machine Learning courses',
-		location: 'Montreal, Canada',
-		degree: 'Programming of neural networks, machine learning, and artificial intelligence. Data analysis and visualization. Usage of AI-powered tools for performance optimization. Promoting AI-driven solutions for business.',
-		startDate: new Date(2024, 4),
-		endDate: new Date(2024, 7)
 	}
 ]
 
@@ -255,9 +266,7 @@ const PROJECTS: Project[] = [
 		link: 'https://streamhata.club',
 		technologies: ['Typescript', 'Vue', 'Nuxt', 'NestJS', 'MongoDB', 'GraphQL', 'Socket.IO', 'Material UI', 'Figma'],
 		achievementList: [
-			'Design and development of complex application for managing StreamHata event and Users-for-users content policy.',
-			'Twitch integration to show overlay for additional information. Websocket sessions for multiplayer / devices support.',
-			'Server configuration and CI/CD pipeline for continuous integration and deployment.'
+			'Implemented complex event management platform with real-time features (WebSockets, Twitch API integration) and CI/CD for seamless updates.'
 		]
 	},
 	{
@@ -267,8 +276,7 @@ const PROJECTS: Project[] = [
 		link: 'https://stanislavsonder.github.io/fate-extended-character-sheet',
 		technologies: ['Typescript', 'Vue', 'PWA', 'Obsidian'],
 		achievementList: [
-			'Design a simple multi-language roleplay local assistance tool for FATE game system.',
-			'PWA support for offline usage. Export/import character sheets to savefiles.'
+			'Design a simple multi-language roleplay local assistance tool for FATE game system with PWA support for offline usage and export/import character sheets to savefiles.'
 		]
 	},
 	{
@@ -278,8 +286,7 @@ const PROJECTS: Project[] = [
 		link: 'https://play.google.com/store/apps/details?id=com.sonder.fate_core',
 		technologies: ['Typescript', 'Kotlin', 'Vue', 'Ionic', 'Tailwind'],
 		achievementList: [
-			'Design and development of mobile application for FATE game system (iOS & Android).',
-			'Module system for additional content. Multi-language support with 30+ languages available.'
+			'Design and development of mobile application for FATE game system (iOS & Android) with module system for additional content and multi-language support with 30+ languages available.'
 		]
 	}
 ].sort((a, b) => b.startDate.getTime() - a.startDate.getTime())
@@ -377,4 +384,4 @@ const TECH_CLOUD: Skill[] = [
 	{ name: 'Rust', url: 'https://www.rust-lang.org/', category: 'Other', important: false }
 ].sort((a, b) => Number(b.important) - Number(a.important))
 
-export { NAME, ADDRESS, DESCRIPTION, TECH_CLOUD, EDUCATION, CONTACTS, EXPERIENCE, PROJECTS }
+export { NAME, ADDRESS, DESCRIPTION, TECH_CLOUD, EDUCATION, CONTACTS, EXPERIENCE, PROJECTS, LANGUAGES }

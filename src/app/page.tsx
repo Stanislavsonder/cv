@@ -1,7 +1,7 @@
 import Image from 'next/image'
-import { ADDRESS, CONTACTS, DESCRIPTION, EDUCATION, EXPERIENCE, NAME, PROJECTS, TECH_CLOUD } from './data'
+import { ADDRESS, CONTACTS, DESCRIPTION, EDUCATION, EXPERIENCE, NAME, PROJECTS, TECH_CLOUD, LANGUAGES } from './data'
 import styles from './page.module.css'
-import { Contact, Education, Experience, Project, Skill } from '@/types'
+import { Contact, Education, Experience, Project, Skill, Language } from '@/types'
 import ThemeSwitcher from '../components/ThemeSwitcher'
 import DownloadPdfButton from '@/components/DownloadPdf'
 
@@ -54,7 +54,7 @@ function educationToHTML(education: Education) {
 			<h3>{education.name}</h3>
 			<h4 className="textRight">{getDatesRange(education.startDate, education.endDate)}</h4>
 			<p>{education.degree}</p>
-			<address className="textRight">{education.location}</address>
+			{education.location && <address className="textRight">{education.location}</address>}
 		</li>
 	)
 }
@@ -147,6 +147,18 @@ function skillToHTML(skill: Skill) {
 	)
 }
 
+function languageToHTML(language: Language) {
+	return (
+		<li
+			key={language.name}
+			className={styles.language}
+		>
+			<span className={styles.language__name}>{language.name}</span>
+			<span className={styles.language__level}>{language.level}</span>
+		</li>
+	)
+}
+
 export default async function Home() {
 	return (
 		<main
@@ -164,6 +176,11 @@ export default async function Home() {
 				</address>
 				<p className={['textCenter', styles.description].join(' ')}>{DESCRIPTION}</p>
 				<ul className={styles.contacts}>{CONTACTS.map(contactToHTML)}</ul>
+			</section>
+			<section>
+				<h2>Languages</h2>
+				<hr />
+				<ul className={styles.languages__list}>{LANGUAGES.map(languageToHTML)}</ul>
 			</section>
 			<section>
 				<h2>Experience</h2>
@@ -184,7 +201,6 @@ export default async function Home() {
 				<h2>Technical Skills</h2>
 				<hr />
 				<ul className={[styles['techCloud'], styles['techCloud--list']].join(' ')}>{TECH_CLOUD.map(skillToHTML)}</ul>
-				{/*<p className={styles.techCloud}>{TECH_CLOUD.join(', ')}</p>*/}
 			</section>
 		</main>
 	)

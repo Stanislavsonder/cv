@@ -1,6 +1,6 @@
 export type Education = {
 	name: string
-	location: string
+	location?: string
 	degree: string
 	startDate: Date
 	endDate?: Date
@@ -44,7 +44,12 @@ export type Contact = {
 
 export type Skill = {
 	name: string
-	url?: string,
+	url?: string
 	category: string
 	important: boolean
+}
+
+export type Language = {
+	name: string
+	level: string
 }

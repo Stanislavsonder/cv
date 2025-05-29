@@ -87,9 +87,9 @@ const CONTACTS: Contact[] = [
 	},
 	{
 		type: 'Telegram profile',
-		text: '@Stanislavsonder',
+		text: '@steeeeeeees',
 		icon: telegramIcon,
-		link: 'https://t.me/stanislavsonder'
+		link: 'https://t.me/steeeeeeees'
 	},
 	{
 		type: 'GitHub profile',

@@ -1,0 +1,34 @@
+.container {
+	margin-bottom: 0.5rem;
+	list-style: none;
+}
+
+.header {
+	margin-bottom: 0.25rem;
+
+	@media only screen and (min-width: 768px), print {
+		display: grid;
+		grid-template-columns: repeat(2, auto);
+	}
+}
+
+.technologies {
+	font-style: italic;
+
+	&:before {
+		@media only screen and (min-width: 768px), print {
+			content: '|';
+			font-style: normal;
+			padding: 0 0.5rem;
+		}
+	}
+}
+
+.achievementsList {
+	padding: 0 1rem 0.5rem;
+	list-style: disc;
+
+	@media only screen and (min-width: 768px), print {
+		padding: 0 3rem 0.5rem;
+	}
+}

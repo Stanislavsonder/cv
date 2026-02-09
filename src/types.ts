@@ -7,30 +7,32 @@ export type Education = {
 }
 
 export type Experience = {
+	logo: string
+	client?: string
+	ndaClientAlias?: string
 	company: string
 	position: string
 	location: string
 	startDate: Date
 	endDate?: Date
 	achievementList: Achievement[]
-	projects?: WorkProject[]
+	projects?: Project[]
 }
 
 export type Achievement = {
 	text: string
-	projects?: WorkProject[]
-}
-
-export type WorkProject = {
-	name: string
-	link?: string
+	projects?: Project[]
 }
 
 export type Project = {
 	name: string
+	link?: string
+	ndaAlias?: string
+}
+
+export type PetProject = Project & {
 	startDate: Date
 	endDate?: Date
-	link?: string
 	technologies: string[]
 	achievementList: string[]
 }

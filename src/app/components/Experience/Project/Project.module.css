@@ -1,0 +1,14 @@
+.container {
+	text-wrap: nowrap;
+	color: var(--grey);
+	font-size: 12px;
+
+	&:not(:last-child) {
+		margin-right: 0.5rem;
+	}
+
+	&:not(:last-child):after {
+		content: ',';
+		text-decoration: none;
+	}
+}

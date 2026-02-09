@@ -1,0 +1,10 @@
+.skill {
+	@media print {
+		display: inline;
+		padding-right: 0.5rem;
+	}
+}
+
+.important {
+	font-weight: bold;
+}

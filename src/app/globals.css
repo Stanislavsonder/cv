@@ -1,4 +1,12 @@
-h1,h2,h3,h4,h5,h6,p,hr,ul {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+hr,
+ul {
 	padding: 0;
 	margin: 0;
 }
@@ -11,7 +19,9 @@ hr {
 	margin-bottom: 0.5rem;
 }
 
-h4, h5, h6 {
+h4,
+h5,
+h6 {
 	font-size: 1rem;
 }
 
@@ -23,9 +33,10 @@ a {
 	color: unset;
 }
 
-
 body {
 	--grey: rgb(100, 100, 100);
+	--black: rgb(0, 0, 0);
+	--white: rgb(255, 255, 255);
 
 	padding: 1rem;
 
@@ -36,6 +47,8 @@ body {
 
 body.dark {
 	--grey: rgb(175, 175, 175);
+	--black: rgb(255, 255, 255);
+	--white: rgb(0, 0, 0);
 
 	@media not print {
 		color: #f5f5f5;
@@ -45,7 +58,7 @@ body.dark {
 			color: #f5f5f5;
 		}
 
-		img {
+		img:not(.companyLogo) {
 			-webkit-filter: invert(100%);
 			filter: invert(100%);
 		}
@@ -66,7 +79,6 @@ body.dark {
 		}
 	}
 }
-
 
 .hideOnPrint {
 	@media print {

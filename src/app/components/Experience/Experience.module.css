@@ -1,0 +1,34 @@
+.container {
+	margin-bottom: 0.5rem;
+	list-style: none;
+}
+
+.header {
+	margin-bottom: 0.5rem;
+	@media only screen and (min-width: 768px), print {
+		display: grid;
+		grid-template-columns: repeat(2, auto);
+		grid-template-rows: repeat(2, auto);
+	}
+}
+
+.title {
+	display: flex;
+	gap: 0.5rem;
+}
+
+.achievementsList {
+	padding: 0 1rem 0.5rem;
+	list-style: disc;
+
+	@media only screen and (min-width: 768px), print {
+		padding: 0 3rem 1rem;
+	}
+}
+
+.projectsList {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.25rem;
+}

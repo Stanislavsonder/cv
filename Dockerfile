@@ -1,5 +1,5 @@
 # Build Stage
-FROM node:21-slim AS build
+FROM node:24-slim AS build
 
 WORKDIR /app
 COPY package*.json ./
@@ -12,7 +12,7 @@ RUN npm run build
 
 
 # Production Stage
-FROM node:21-slim AS deploy
+FROM node:24-slim AS deploy
 
 WORKDIR /app
 

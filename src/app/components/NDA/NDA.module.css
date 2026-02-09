@@ -1,0 +1,21 @@
+.nda {
+	font-size: inherit;
+	color: var(--grey);
+	padding: 0.1rem;
+	border: 1px solid var(--grey);
+	border-radius: 0.25rem;
+
+	&:before {
+		content: 'NDA';
+		background-color: var(--grey) !important;
+		color: var(--white);
+		padding: 0.1rem 0.25rem;
+		border-radius: 0.25rem;
+		margin-right: 0.25rem;
+
+		@media print {
+			-webkit-print-color-adjust: exact !important;
+			print-color-adjust: exact !important;
+		}
+	}
+}

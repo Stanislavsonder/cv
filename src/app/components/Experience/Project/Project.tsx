@@ -1,7 +1,7 @@
 import { type FC } from 'react'
 import { Project as ProjectType } from '@/types'
 import styles from './Project.module.css'
-import NDA from '../../NDA/NDA'
+import NDA from '../../Nda/Nda'
 
 interface Props {
 	project: ProjectType

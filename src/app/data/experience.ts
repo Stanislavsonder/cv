@@ -6,13 +6,13 @@ import stripeLogo from '../../assets/logos/stripe.svg'
 const WORK_PROJECTS: Record<string, Project> = {
 	ComplianceHub: {
 		name: 'Compliance Hub',
-		link: 'https://stripe.com/',
-		ndaAlias: 'Compliance Project'
+		link: '',
+		ndaAlias: 'Risk & Compliance Project'
 	},
 	Orry: {
 		name: 'Orry',
-		link: 'https://stripe.com/',
-		ndaAlias: 'AI Project'
+		link: '',
+		ndaAlias: 'Risk & Compliance Project'
 	},
 	TSN: {
 		name: 'TSN',
@@ -155,7 +155,7 @@ const EXPERIENCE: Experience[] = [
 				projects: [WORK_PROJECTS.iHeart, WORK_PROJECTS.CTV, WORK_PROJECTS.ShoppingTrends]
 			},
 			{
-				text: 'Managed a team of four frontend developers, conducted cross-team training sessions, and mentored junior engineers—boosting productivity and technical maturity.',
+				text: 'Managed a team of four frontend developers, conducted cross-team training sessions, and mentored junior engineers - boosting productivity and technical maturity.',
 				projects: [WORK_PROJECTS.iHeart, WORK_PROJECTS.ShoppingTrends]
 			},
 			{
@@ -167,7 +167,7 @@ const EXPERIENCE: Experience[] = [
 				projects: [WORK_PROJECTS.iHeart, WORK_PROJECTS.ShoppingTrends, WORK_PROJECTS.BNN, WORK_PROJECTS.CP24]
 			},
 			{
-				text: 'Architected a dynamic image rendering system combining AEM-generated renditions with responsive Vue components—reducing client-side load and improving page speed by up to 140%.',
+				text: 'Architected a dynamic image rendering system combining AEM-generated renditions with responsive Vue components - reducing client-side load and improving page speed by up to 140%.',
 				projects: [WORK_PROJECTS.iHeart, WORK_PROJECTS.CTV, WORK_PROJECTS.ShoppingTrends, WORK_PROJECTS.Noovoinfo]
 			},
 			{
@@ -204,6 +204,7 @@ const EXPERIENCE: Experience[] = [
 		company: 'Stripe',
 		logo: stripeLogo,
 		position: 'Senior Software Engineer',
+		client: 'Risk & Compliance',
 		location: 'Dublin, Ireland',
 		startDate: new Date(2025, 9),
 		endDate: undefined,

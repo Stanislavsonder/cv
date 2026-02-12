@@ -5,7 +5,7 @@ import { getDatesRange, getExperienceDuration } from '@/utils'
 import styles from './Experience.module.css'
 import Project from './Project/Project'
 import clsx from 'clsx'
-import NDA from '../NDA/NDA'
+import Nda from '../Nda/Nda'
 
 interface Props {
 	experience: ExperienceType
@@ -17,7 +17,7 @@ const Experience: FC<Props> = ({ experience }) => {
 	const duration = getExperienceDuration(startDate, endDate)
 
 	const Position = () => {
-		const clientLabel = ndaClientAlias ? <NDA label={ndaClientAlias} /> : client
+		const clientLabel = ndaClientAlias ? <Nda label={ndaClientAlias} /> : client
 		const hasClient = Boolean(clientLabel)
 
 		return (

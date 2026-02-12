@@ -1,7 +1,7 @@
 .container {
 	text-wrap: nowrap;
 	color: var(--grey);
-	font-size: 12px;
+	font-size: 14px;
 
 	&:not(:last-child) {
 		margin-right: 0.5rem;

@@ -1,7 +1,7 @@
 .nda {
 	font-size: inherit;
 	color: var(--grey);
-	padding: 0.1rem;
+	padding-block: 0.05rem;
 	border: 1px solid var(--grey);
 	border-radius: 0.25rem;
 

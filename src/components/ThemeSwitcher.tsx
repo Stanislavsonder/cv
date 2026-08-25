@@ -21,7 +21,8 @@ export default function ThemeSwitcher() {
 					src={darkModeIcon}
 					alt="Toggle Dark Mode"
 					aria-hidden
-					width="16"
+					width={16}
+					height={16}
 				/>
 				Toggle Dark Mode
 			</button>

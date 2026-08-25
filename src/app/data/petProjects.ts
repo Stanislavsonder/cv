@@ -12,23 +12,23 @@ const PET_PROJECTS: PetProject[] = [
 		]
 	},
 	{
-		name: 'FATE Extended Roleplay Assistance Tool',
+		name: 'Fate Extended Roleplay Assistance Tool',
 		startDate: new Date(2023, 4),
 		endDate: new Date(2023, 8),
 		link: 'https://stanislavsonder.github.io/fate-extended-character-sheet',
 		technologies: ['Typescript', 'Vue', 'PWA', 'Obsidian'],
 		achievementList: [
-			'Design a simple multi-language roleplay local assistance tool for FATE game system with PWA support for offline usage and export/import character sheets to savefiles.'
+			'Design a simple multi-language roleplay local assistance tool for Fate Extended game system with PWA support for offline usage and export/import character sheets to savefiles.'
 		]
 	},
 	{
-		name: 'FATE: Core',
+		name: 'Assistant for Fate',
 		startDate: new Date(2023, 12),
 		endDate: undefined,
-		link: 'https://play.google.com/store/apps/details?id=com.sonder.fate_core',
+		link: 'https://github.com/Stanislavsonder/fate-core',
 		technologies: ['Typescript', 'Kotlin', 'Vue', 'Ionic', 'Tailwind'],
 		achievementList: [
-			'Design and development of mobile application for FATE game system (iOS & Android) with module system for additional content and multi-language support with 30+ languages available.'
+			'Design and development of mobile application for Fate game system (iOS & Android) with module system for additional content and multi-language support with 30+ languages available.'
 		]
 	}
 ].sort((a, b) => b.startDate.getTime() - a.startDate.getTime())

@@ -80,6 +80,10 @@ body.dark {
 	}
 }
 
+@page {
+	margin: 10mm 15mm;
+}
+
 .hideOnPrint {
 	@media print {
 		display: none;

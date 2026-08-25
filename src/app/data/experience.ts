@@ -83,7 +83,7 @@ const EXPERIENCE: Experience[] = [
 	{
 		company: 'Flexmerch Corp',
 		logo: flexmerchLogo,
-		position: 'JavaScript / ExtendScript Developer',
+		position: 'Computer Graphics Engineer',
 		location: 'Minsk, Belarus',
 		startDate: new Date(2019, 0),
 		endDate: new Date(2020, 3),

@@ -21,7 +21,8 @@ const Contact: FC<Props> = ({ contact }) => {
 				className={styles.icon}
 				src={icon}
 				alt={type}
-				width="16"
+				width={16}
+				height={16}
 			/>
 			<span>{text}</span>
 		</a>

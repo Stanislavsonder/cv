@@ -1,11 +1,11 @@
 import { FC } from 'react'
 import Image from 'next/image'
 import { Experience as ExperienceType } from '@/types'
-import { getDatesRange, getExperienceDuration } from '@/utils'
 import styles from './Experience.module.css'
 import Project from './Project/Project'
 import clsx from 'clsx'
 import Nda from '../Nda/Nda'
+import Tenure from './Tenure'
 
 interface Props {
 	experience: ExperienceType
@@ -13,8 +13,6 @@ interface Props {
 
 const Experience: FC<Props> = ({ experience }) => {
 	const { company, logo, position, client, ndaClientAlias, startDate, endDate, projects, achievementList, location } = experience
-	const datesRange = getDatesRange(startDate, endDate)
-	const duration = getExperienceDuration(startDate, endDate)
 
 	const Position = () => {
 		const clientLabel = ndaClientAlias ? <Nda label={ndaClientAlias} /> : client
@@ -41,14 +39,15 @@ const Experience: FC<Props> = ({ experience }) => {
 						className={clsx(styles.logo, 'companyLogo')}
 						src={logo}
 						alt={company}
-						width="20"
-						height="20"
+						width={20}
+						height={20}
 					/>
 					{company}
 				</h3>
-				<h4 className="textRight">
-					{duration} | {datesRange}
-				</h4>
+				<Tenure
+					startDate={startDate}
+					endDate={endDate}
+				/>
 				<Position />
 				<address className="textRight">{location}</address>
 			</div>

@@ -25,7 +25,7 @@ const PET_PROJECTS: PetProject[] = [
 		name: 'Assistant for Fate',
 		startDate: new Date(2023, 12),
 		endDate: undefined,
-		link: 'https://github.com/Stanislavsonder/fate-core',
+		link: 'https://github.com/Stanislavsonder/fate',
 		technologies: ['Typescript', 'Kotlin', 'Vue', 'Ionic', 'Tailwind'],
 		achievementList: [
 			'Design and development of mobile application for Fate game system (iOS & Android) with module system for additional content and multi-language support with 30+ languages available.'

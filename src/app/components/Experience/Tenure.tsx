@@ -1,22 +1,24 @@
 'use client'
 
-import { getDatesRange, getExperienceDuration } from '@/utils'
+import { useEffect, useState } from 'react'
+import { getExperienceDuration } from '@/utils'
 
 interface Props {
-	startDate: Date | string
-	endDate?: Date | string
+	startDate: Date
+	endDate?: Date
+	datesRange: string
+	buildTime: number
 }
 
-export default function Tenure({ startDate, endDate }: Props) {
-	const start = new Date(startDate)
-	const end = endDate ? new Date(endDate) : undefined
+export default function Tenure({ startDate, endDate, datesRange, buildTime }: Props) {
+	// The first render must match the static HTML, otherwise React keeps the stale build-time text.
+	const [now, setNow] = useState(buildTime)
+
+	useEffect(() => setNow(Date.now()), [])
 
 	return (
-		<h4
-			className="textRight"
-			suppressHydrationWarning
-		>
-			{getExperienceDuration(start, end)} | {getDatesRange(start, end)}
+		<h4 className="textRight">
+			{getExperienceDuration(startDate, endDate ?? new Date(now))} | {datesRange}
 		</h4>
 	)
 }

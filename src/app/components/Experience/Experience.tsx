@@ -1,6 +1,7 @@
 import { FC } from 'react'
 import Image from 'next/image'
 import { Experience as ExperienceType } from '@/types'
+import { getDatesRange } from '@/utils'
 import styles from './Experience.module.css'
 import Project from './Project/Project'
 import clsx from 'clsx'
@@ -47,6 +48,8 @@ const Experience: FC<Props> = ({ experience }) => {
 				<Tenure
 					startDate={startDate}
 					endDate={endDate}
+					datesRange={getDatesRange(startDate, endDate)}
+					buildTime={Date.now()}
 				/>
 				<Position />
 				<address className="textRight">{location}</address>

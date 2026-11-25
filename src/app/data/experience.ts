@@ -5,13 +5,17 @@ import stripeLogo from '../../assets/logos/stripe.svg'
 
 const WORK_PROJECTS: Record<string, Project> = {
 	ComplianceHub: {
-		name: 'Compliance Hub',
-		link: '',
-		ndaAlias: 'Risk & Compliance Project'
+		name: 'Compliance Hub'
 	},
 	Orry: {
-		name: 'Orry',
-		link: '',
+		name: 'Orry'
+	},
+	StripeNda1: {
+		name: 'Stripe NDA Project 1',
+		ndaAlias: 'Risk & Compliance Project'
+	},
+	StripeNda2: {
+		name: 'Stripe NDA Project 2',
 		ndaAlias: 'Risk & Compliance Project'
 	},
 	TSN: {
@@ -203,12 +207,12 @@ const EXPERIENCE: Experience[] = [
 	{
 		company: 'Stripe',
 		logo: stripeLogo,
-		position: 'Senior Software Engineer',
+		position: 'Software Engineer',
 		client: 'Risk & Compliance',
 		location: 'Dublin, Ireland',
-		startDate: new Date(2025, 9),
+		startDate: new Date(2025, 9, 28),
 		endDate: undefined,
-		projects: [WORK_PROJECTS.ComplianceHub, WORK_PROJECTS.Orry],
+		projects: [WORK_PROJECTS.ComplianceHub, WORK_PROJECTS.Orry, WORK_PROJECTS.StripeNda1, WORK_PROJECTS.StripeNda2],
 		achievementList: [
 			{
 				text: 'TBD after release 🚀',

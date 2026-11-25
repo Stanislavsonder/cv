@@ -15,5 +15,6 @@ export function getExperienceDuration(startDate: Date, endDate?: Date) {
 	if (years < 1) {
 		return '< 1 year'
 	}
-	return [years ? `${years} year(s)` : '', months ? `${months} months` : ''].filter(Boolean).join(', ')
+	const plural = (count: number, unit: string) => `${count} ${unit}${count === 1 ? '' : 's'}`
+	return [plural(years, 'year'), months ? plural(months, 'month') : ''].filter(Boolean).join(', ')
 }

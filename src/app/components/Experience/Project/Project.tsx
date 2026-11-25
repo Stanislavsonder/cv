@@ -15,6 +15,10 @@ const Project: FC<Props> = ({ project }) => {
 		return <NDA label={label} />
 	}
 
+	if (!link) {
+		return <span className={styles.container}>{label}</span>
+	}
+
 	return (
 		<a
 			className={styles.container}
